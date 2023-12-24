@@ -35,7 +35,6 @@
     box-sizing: border-box;
     border: none;
     outline: none;
-    text-transform: capitalize;
     text-decoration: none;
     list-style: none;
     scroll-behavior: smooth;
@@ -43,8 +42,6 @@
 
 *:not(input) {
     text-transform: capitalize;
-
-
 }
 
 body {

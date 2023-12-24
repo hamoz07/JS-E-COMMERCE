@@ -137,7 +137,7 @@
 }
 
 .cart-products-list {
-    height: calc(100vh - 270px);
+    height: calc(100vh - 280px);
     overflow-y: scroll;
     padding-right: 5px;
     margin-bottom: 5px;

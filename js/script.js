@@ -81,7 +81,7 @@ function setCart() {
 
 document.addEventListener("click", (e) => {
   if (e.target.id === "addToCart") {
-    if (username) {
+    if (usernamer) {
       const prodId = e.target.dataset.prod;
       const getProd = allProds.find((pr) => pr.id === +prodId);
       const checkgottenProdInLocal = addenTocart?.find(
