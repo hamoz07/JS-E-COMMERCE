@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Store | Profile</title>
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/simple-icons.css" />
+    <link rel="stylesheet" href="./css/productDetails.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="loader flex align-center justify-center" id="loader">
+        <img src="./imgs/images/loader/loader.gif" alt="loader" />
+    </div>
+    <header class="header flex align-center space-between">
+        <div class="alert flex align-center justify-center">message</div>
+        <a href="#" class="logo flex align-center">
+            <i class="fas fa-shopping-bag"></i>
+            <h3 id="logoText">Store</h3>
+        </a>
+
+        <nav class="navbar flex align-center space-between">
+            <ul class="flex align-center">
+                <li id="homepageLister">
+                    <a id="homepageLink">
+                        <i class="fas fa-home" id="homepage"></i>
+                    </a>
+                </li>
+                <li class="shopping" id="shopping">
+                    <a href="#" class="shoppingCartLink">
+                        <i class="fas fa-shopping-bag" id="shoppingCart"></i>
+                    </a>
+                    <span class="number flex align-center justify-center" id="cartItemsNumber">0</span>
+                </li>
+            </ul>
+            <div id="user" class="user">
+                <p id="helloUser">Hi, <span id="username">Hamza</span></p>
+                <div class="user-list" id="userList">
+                    <a href="login.html" class="btn" id="loginUser">Login</a>
+                    <a class="profile flex align-center" id="profilePage">
+                        <i class="fa fa-user-circle"></i>
+                        profile
+                    </a>
+                    <a href="login.html" id="logout" class="logout flex align-center gap-10">logout<i
+                            class="icon-logout"></i></a>
+                </div>
+            </div>
+        </nav>
+        <div class="shopping-cart-list" id="shoppingCartList">
+            <div class="cart-header flex align-center space-between">
+                <h1>your cart</h1>
+                <i class="icon-close" id="closeCart"></i>
+            </div>
+            <div class="cart-products-list" id="cartProductsList">
+                <!-- <div class="cart-product-box flex space-between">
+                    <div class="product-details flex align-center">
+                        <div class="img">
+                            <img src="./imgs/images/pro-11.jpg" alt="" />
+                        </div>
+                        <div class="title">
+                            <p>title</p>
+                            <div class="quantity">
+                                <p>quantity<span class="qyt number">1</span></p>
+                                <div class="qyt-btn flex align-center">
+                                    <button class="btn increase" id="increase">+</button><button class="btn decrease"
+                                        id="decrease">-</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="price flex align-center space-between">
+                        <p class="price-number">$100</p>
+                        <i class="fas fa-trash delete-product" id="deleteProductInCart"></i>
+                    </div>
+                </div> -->
+            </div>
+            <div class="cart-details">
+                <div class="total flex align-center space-between">
+                    <p>total</p>
+                    <p class="total_price" id="totalPriceNumber">$0</p>
+                </div>
+            </div>
+            <button class="btn">checkout</button>
+        </div>
+    </header>
+    <section>
+        <div class="productDetails flex align-center space-between gap-10"></div>
+    </section>
+    <footer>
+        <p class="copyright">&copy; Hamza Ramadan</p>
+    </footer>
+    <script>
+        let productsDB = [
+            {
+                id: 1,
+                image: "./imgs/images/prod-01.png",
+                title: "Product-1 title",
+                description: "Product-1 description",
+                category: "pizza",
+                qyt: 1,
+                price: 30,
+            },
+            {
+                id: 2,
+                image: "./imgs/images/prod-02.png",
+                title: "Product-2 title",
+                description: "Product-2 description",
+                category: "pizza",
+                qyt: 1,
+                price: 25,
+            },
+            {
+                id: 3,
+                image: "./imgs/images/prod-03.png",
+                title: "Product-3 title",
+                description: "Product-3 description",
+                category: "pizza",
+                qyt: 1,
+                price: 30,
+            },
+            {
+                id: 4,
+                image: "./imgs/images/prod-04.png",
+                title: "Product-4 title",
+                description: "Product-4 description",
+                category: "pizza",
+                qyt: 1,
+                price: 15,
+            },
+            {
+                id: 5,
+                image: "./imgs/images/prod-05.png",
+                title: "Product-5 title",
+                description: "Product-5 description",
+                category: "pizza",
+                qyt: 1,
+                price: 10,
+            },
+            {
+                id: 6,
+                image: "./imgs/images/prod-06.png",
+                title: "Product-6 title",
+                description: "Product-6 description",
+                category: "pizza",
+                qyt: 1,
+                price: 25,
+            },
+            {
+                id: 7,
+                image: "./imgs/images/prod-07.png",
+                title: "Product-7 title",
+                description: "Product-7 description",
+                category: "pizza",
+                qyt: 1,
+                price: 10,
+            },
+            {
+                id: 8,
+                image: "./imgs/images/prod-08.png",
+                title: "Product-8 title",
+                description: "Product-8 description",
+                category: "pizza",
+                qyt: 1,
+                price: 15,
+            },
+            {
+                id: 9,
+                image: "./imgs/images/prod-09.png",
+                title: "Product-9 title",
+                description: "Product-9 description",
+                category: "pizza",
+                qyt: 1,
+                price: 20,
+            },
+            {
+                id: 10,
+                image: "./imgs/images/prod-10.jpg",
+                title: "Product-10 title",
+                description: "Product-10 description",
+                category: "pizza",
+                qyt: 1,
+                price: 15,
+            },
+        ];
+
+        localStorage.setItem("productsDB", JSON.stringify(productsDB));
+    </script>
+    <script src="./js/productDetails.js"></script>
+    <script src="./js/alert.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
